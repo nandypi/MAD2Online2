@@ -1,7 +1,11 @@
 from flask import Flask, request, render_template
-
+from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
+
+# Configuring JWT
+app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'
+jwt = JWTManager(app)
 
 # connecting to the apis
 from apis import api
