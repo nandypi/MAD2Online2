@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Configuring JWT
 app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'

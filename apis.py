@@ -8,13 +8,13 @@ api = Api()
 
 class HelloWorld(Resource):
     def get(self):
-        return {'message': 'Hello, World!'}
+        return {'message': 'Hello, World! Greetings from the backend API.'}
     def post(self):
         data = request.get_json()
         if not data or 'name' not in data:
             return {'message': 'Name is required!'}, 400
         return {'message': f'Hello, {data["name"]}!'}
-api.add_resource(HelloWorld, '/api')
+api.add_resource(HelloWorld, '/api/greet')
 
 class Register(Resource):
     def post(self):
